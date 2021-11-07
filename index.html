@@ -4,9 +4,261 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/validationScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Mitr:wght@200;300;400;500&display=swap" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>waddon | Book your own tent house</title>
+
+    <style>
+        table {
+            font-family: 'Mitr', sans-serif;
+            border-collapse: collapse;
+            width: 95%;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        th{
+            font-family: 'Acme', sans-serif;
+            font-size: 22px;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <script>
+        $(document).ready(function (){
+            $(".bigTitle").click(function (){
+                $(".bigTitle").animate({
+                    fontSize: '50px'
+                }, 1000);
+            });
+        });
+        $(document).ready(function (){
+            $(".instaColor").click(function (){
+                $(".instaColor").animate({
+                    opacity: "0"
+                }, 1000);
+            });
+        });
+
+        $(document).ready(function (){
+            $(".animationH1").click(function (){
+                $(".animationH1").animate({
+                    height: 'toggle'
+                }, 1000);
+            });
+        });
+    </script>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/icons/w.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            addon
+          </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#equipment">Equipments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#reservation">Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#more">More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="headerSection">
+      <h1 class="bigTitle" id="home">WADDON</h1>
+      <i><h2 class="smallTitle">retreat from every days</h2></i>
+    </div>
+
+
+    <div class="descriptionSection">
+        <h1 id="equipment">Equipments:</h1>
+        <ul>
+            <li>Full kitchen equipment</li>
+            <li>BBQ equipment, for make some juicy meat</li>
+            <li>Fireplace, for idyll night</li>
+            <li>Internet connection, to stay connected if you want</li>
+            <li>Jacuzzi</li>
+        </ul>
+    </div>
+    <br>
+
+      <!--3D-s rész --> 
+    <div class="threeDScene">
+        <canvas class="webgl"></canvas>
+        <script src="libs/three.min.js"></script>
+        <script src="libs/GLTFLoader.js"></script>
+        <script src="libs/OBJLoader.js"></script>
+        <script src="script/threeJsScript.js"></script>
+    </div>
+
+    <div class="TestDiv">
+        <p>&nbsp</p>
+    </div>
+
+
+    <div class="ourHappyCustomers">
+        <h1 class="underlinedHs">Our Happy Customers From <span class="instaColor">Instagram</span></h1>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/posts/post1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="blackCarousel">@tyehaus</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/posts/post3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="blackCarousel">@tyehaus</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/posts/post2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="fontCarousel">@tyehaus</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="joinNow">
+        <h1 class="underlinedHs animationH1">BOOK RIGHT NOW!</h1>
+        <button type="button" class="button buttongreen">BOOK</button>
+    </div>
+
+    <!-- Táblázat rész -->
+    <div class="moreInfoSection">
+        <h1 class="underlinedHs" id="more">More Info</h1>
+        <table>
+            <tr>
+                <th>Extra</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Grill Set</td>
+                <td>20$</td>
+            </tr>
+            <tr>
+                <td>Tent Place</td>
+                <td>10$/Person</td>
+            </tr>
+            <tr>
+                <td>Fire Place</td>
+                <td>5$/Night</td>
+            </tr>
+            <tr>
+                <td>Tour int the National Park</td>
+                <td>30$/Person</td>
+            </tr>
+            <tr>
+                <td>Projector + Canvas</td>
+                <td>100$</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <br><br>
+    <h1 class="underlinedHs" id="reservation">Book Now</h1>
+    <div class="formSection">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="fullName" placeholder="name@example.com">
+            <label for="fullName">Full Name *</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+            <label for="emailAddress">Email address *</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="phoneNumber" placeholder="name@example.com">
+            <label for="phoneNumber">Phone Number *</label>
+        </div>
+
+
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password *</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPasswordAgain" placeholder="Password">
+            <label for="floatingPasswordAgain">Password Again *</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <select class="form-select" id="house" aria-label="Floating label select example">
+                <option value="Leaf">Leaf</option>
+                <option value="Palm">Palm</option>
+                <option value="Pine">Pine</option>
+            </select>
+            <label for="house">Witch House do you want?</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="extra" style="height: 100px"></textarea>
+            <label for="extra">Extra</label>
+        </div>
+
+        <br><br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="rulesAgreed" id="agree">
+            <label class="form-check-label" for="agree">
+                I agree all the regulations*
+            </label>
+        </div><br>
+        <i class="requiredText">* required</i><br><br>
+        <p class="validationProblem" id="validationProblemMessage"></p><br>
+        <button type="button" class="button buttongreen" onclick="validation()">BOOK</button>
+    </div>
+
+
+
+
+     <!-- Option 1: Bootstrap Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
