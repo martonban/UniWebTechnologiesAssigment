@@ -64,7 +64,7 @@ function validation(){
         extra: extra
     }
 
-    users.push(user);
+
 
     var j= 0;
     for (let i= 0; i<users.length; i++){
@@ -78,8 +78,16 @@ function validation(){
         errorMessage.push("There is existed user\n");
     }
 
+    if(valid ==true){
+        users.push(user);
+        document.getElementById("validationProblemMessage").innerHTML = "Sucsessfull registration";
+        document.getElementById("validationProblemMessage").style.color = "green";
+    }else{
+        document.getElementById("validationProblemMessage").innerHTML = errorMessage;
+        document.getElementById("validationProblemMessage").style.color = "red";
+    }
 
-    document.getElementById("validationProblemMessage").innerHTML = errorMessage;
+
 
 
 
